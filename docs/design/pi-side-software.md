@@ -89,3 +89,4 @@ IR Dispatcher ──► ir-ctl subprocess
 ## Readiness
 
 **High.** Main structure and all coordination decisions are resolved. Implementation should not need to invent major design decisions.
+

@@ -1,9 +1,0 @@
-artifact_id: index/recent-session
-checkpoint_id: bca921a4e0e5406db1fec6818d79abf4
-created_at: '2026-03-28T03:37:11.060600Z'
-flush_reason: context_safety
-is_current: true
-stage_metadata:
-  active_threads: []
-  recent_completed_threads: []
-  projection_stale: false

@@ -1,0 +1,13 @@
+[Unit]
+Description=Yamaha IR Control Bridge
+After=network.target bluetooth.target
+
+[Service]
+Type=simple
+ExecStart=uv run python src/main.py
+WorkingDirectory=/home/dietpi/s301-remote
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

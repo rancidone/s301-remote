@@ -1,0 +1,9 @@
+[project]
+name = "s301-remote"
+version = "0.1.0"
+description = "Yamaha A-S301 IR control bridge"
+requires-python = ">=3.11"
+dependencies = [
+    "bless>=0.2.6",
+    "cec>=0.2.8",
+]

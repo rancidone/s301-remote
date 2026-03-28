@@ -1,0 +1,26 @@
+artifact_id: pi-side-software
+checkpoint_id: 517c1b79701445b1af9d38e89bf88503
+created_at: '2026-03-28T04:04:20.553061Z'
+flush_reason: review_transition
+is_current: true
+stage_metadata:
+  design_unit_id: pi-side-software
+  title: Pi-Side Software
+  scope_summary: Single Python process accepting HDMI-CEC and BLE input and translating
+    to Yamaha A-S301 IR transmissions via ir-ctl.
+  status: in_review
+  readiness: high
+  readiness_rationale: All four components defined with responsibilities, interfaces,
+    and coordination strategy. Implementation should not need to invent major design
+    decisions.
+  open_questions: []
+  assumptions:
+  - python-cec and bless are viable libraries for their respective roles
+  - ir-ctl subprocess invocation is reliable enough without retry logic
+  - BLE no-bonding security risk is acceptable for home environment
+  accepted_risks:
+  - 'BLE security: no bonding'
+  - Power toggle drift
+  - Input toggle ambiguity
+  dependencies:
+  - Design Unit 2 must define command byte encoding before BLE GATT schema is final

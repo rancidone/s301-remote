@@ -1,0 +1,28 @@
+artifact_id: side-door-firmware
+checkpoint_id: e71f6eade2ea4defa6bb8eb4189fe1db
+created_at: '2026-03-28T04:04:20.563829Z'
+flush_reason: review_transition
+is_current: true
+stage_metadata:
+  design_unit_id: side-door-firmware
+  title: Side-Door Device Firmware
+  scope_summary: nRF52840 coin-cell BLE device firmware using nRF Connect SDK (Zephyr).
+    Connect-on-press model, custom GATT characteristic write, silent drop on failure.
+  status: in_review
+  readiness: high
+  readiness_rationale: Hardware platform, toolchain, BLE model, command byte encoding,
+    GATT schema structure, and firmware structure are all resolved. Only UUID generation
+    remains, which is mechanical not a design decision.
+  open_questions:
+  - Generate 128-bit service UUID and characteristic UUID before implementation begins
+  assumptions:
+  - nRF52840 built-in PCB trace antenna is sufficient for same-building range
+  - nRF Connect SDK Zephyr deep sleep + GPIO wakeup is well-documented enough to implement
+    without surprises
+  - Pi is the GATT server (peripheral); side-door device is GATT client (central)
+  accepted_risks:
+  - Silent drop on failed write
+  - No BLE bonding
+  dependencies:
+  - Pi-Side Software (pi-side-software) BLE GATT server must use same service UUID
+    and characteristic UUID
